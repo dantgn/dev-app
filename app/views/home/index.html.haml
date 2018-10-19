@@ -1,0 +1,8 @@
+%h1 Dev App
+  
+- if user_signed_in?
+  %p="Welcome #{current_user.email}!"
+  %p= link_to('sign out', destroy_user_session_path, method: :delete)  
+- else
+  %p='Welcome! please sign up, or sign in if you already have an account'
+  %p= link_to('Signup', new_user_registration_path, method: :get)
