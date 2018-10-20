@@ -1,5 +1,5 @@
 
-= form_for @picture, url: user_pictures_path(current_user, @picture) do |f|
+= form_for @picture, url: user_pictures_path(current_user) do |f|
   %fieldset
     %legend Edit 
     = render partial: 'form', locals: {f: f}
@@ -9,3 +9,5 @@
         .col-md-5
           = f.submit "Save", class: "btn btn-primary"
           = link_to "Cancel", user_pictures_path(current_user), class: "btn btn-link"
+    - if f.object.errors.any?
+      = render partial: 'errors', locals: {f: f}

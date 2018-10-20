@@ -17,7 +17,8 @@ class PicturesController < ApplicationController
       flash[:notice] = 'Picture successfully created'
       redirect_to user_pictures_path(current_user)
     else
-      render :edit
+      @picture = picture
+      render :new
     end
   end
 
@@ -26,7 +27,6 @@ class PicturesController < ApplicationController
   def load_picture
     @picture = Picture.find_by_id(params[:id])
   end
-
 
   def picture_params
     params.require(:picture).permit(
