@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+@import "font-awesome";
+
+// need to be refactored on frontend development
+
+.clear{
+  clear:both;
+}
+
+.text-center{
+  text-align: center;
+}
+
+#flash_messages{
+  .notice{
+    color: #7EC17E;
+    padding: 5px;
+    font-weight: bold;
+  }
+  .alert{
+    color: orange;
+    padding: 5px;
+    font-weight: bold;
+  }
+}

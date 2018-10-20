@@ -1,0 +1,17 @@
+#menu
+
+%ul.nav.nav-tabs
+  %li
+    = top_menu_link(root_path, { name: 'home', icon: 'home' })
+  - if user_signed_in?
+    %li
+      = top_menu_link(user_pictures_path(current_user), { name: 'gallery', icon: 'image' })
+    %li
+      = top_menu_link(destroy_user_session_path, { name: 'logout', icon: 'sign-out-alt', method: :delete })
+  - else
+    %li
+      = top_menu_link(new_user_session_path, { name: 'login', icon: 'sign-in-alt' })
+
+#flash_messages
+  %p.notice= notice if flash[:notice].present?
+  %p.alert= alert if flash[:alert].present?

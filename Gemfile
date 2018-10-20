@@ -32,6 +32,13 @@ gem 'devise'
 
 # frontend coding, better than .erb
 gem 'haml'
+# frontend design 
+gem 'bootstrap-sass', '~> 3.3.7'
+# icons
+gem "font-awesome-rails"
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
