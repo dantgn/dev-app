@@ -9,4 +9,4 @@
           = f.submit "Save", class: "btn btn-primary"
           = link_to "Cancel", user_pictures_path(current_user), class: "btn btn-link"
     - if f.object.errors.any?
-      = render partial: 'errors', locals: {f: f}
+      = render partial: 'shared/errors', locals: {f: f}

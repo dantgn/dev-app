@@ -1,0 +1,18 @@
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %legend Log in
+  .form-group.row
+    = f.label :email, class: 'col-md-2 control-label'
+    .col-md-4
+      = f.text_field :email, class: 'form-control', autofocus: true
+
+  .form-group.row
+    = f.label :password, class: 'col-md-2 control-label'
+    .col-md-4
+      = f.password_field :password, class: 'form-control', autocomplete: "off"
+  
+  .form-group.row
+    .col-md-offset-2.col-md-4
+      = f.submit "Log in", class: "btn btn-primary"
+
+= render "devise/shared/links"
