@@ -3,7 +3,6 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_ownership
-  before_action :load_picture, only: [:edit, :update, :show]
 
   def index
     @pictures = current_user.pictures
@@ -25,10 +24,6 @@ class PicturesController < ApplicationController
   end
 
   private
-
-  def load_picture
-    @picture = Picture.find_by_id(params[:id])
-  end
 
   def ensure_ownership
     redirect_to root_path unless authorized_user?
