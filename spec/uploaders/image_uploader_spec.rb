@@ -42,7 +42,17 @@ RSpec.describe ImageUploader do
     it 'raises an error for files with invalid extension' do
       allow(uploader).to receive(:extension_whitelist).and_return(whitelist)
 
-      expect { uploader.store!(jpg_picture) }.to raise_error(CarrierWave::IntegrityError)
+      expect { uploader.store!(jpg_picture) }.
+        to raise_error(/You are not allowed to upload "jpg" files, allowed types: gif, png/)
+    end
+  end
+
+  context 'size_range' do
+    it 'raises an error for files bigger than the max size' do
+      allow(uploader).to receive(:size_range).and_return(0..1)
+
+      expect { uploader.store!(jpg_picture) }.
+        to raise_error(/File size should be less than 1 Byte/)
     end
   end
 end
