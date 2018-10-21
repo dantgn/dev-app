@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Basic Rails Application composed by
 
-Things you may want to cover:
+- Rails 5.2.1
 
-* Ruby version
+- Ruby 2.4
 
-* System dependencies
+- PostgreSQL database
 
-* Configuration
+- Devise for User Authentication
 
-* Database creation
+- Bootstrap for beautify frontend
 
-* Database initialization
+- Carrierwave for Image Uploading
 
-* How to run the test suite
+- AWS S3 to upload images in production enviornment
 
-* Services (job queues, cache servers, search engines, etc.)
+- RSpec for Unit testing
 
-* Deployment instructions
 
-* ...
+## Features
+
+- As a user, I can register
+
+- As auser, I can log in
+
+- As a user I can upload an image
+
+- As a user I can list my uploaded images with tumbnails
