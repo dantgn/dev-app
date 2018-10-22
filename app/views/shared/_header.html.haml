@@ -11,6 +11,8 @@
   - else
     %li
       = top_menu_link(new_user_session_path, { name: 'login', icon: 'sign-in-alt' })
+    %li
+      = top_menu_link(new_user_registration_path, { name: 'Sign up', icon: 'sign-up-alt' })
 
 #flash_messages
   %p.notice= notice if flash[:notice].present?
