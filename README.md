@@ -16,8 +16,7 @@
 
 - AWS S3 to upload images in production enviornment
 
-- RSpec for Unit testing
-
+- RSpec and Capybara for testing
 
 ## Features
 
