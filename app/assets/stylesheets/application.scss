@@ -16,6 +16,7 @@
 
 @import "bootstrap";
 @import "font-awesome";
+@import "lightbox";
 
 // need to be refactored on frontend development
 
@@ -31,9 +32,14 @@
   color: red;
 }
 
-#gallery h1{
-  color: #337ab7;
-  margin-bottom: 25px;
+#gallery {
+  h1{
+    color: #337ab7;
+    margin-bottom: 25px;
+  }
+  .user-picture {
+    margin: 20px 0;
+  }
 }
 
 #flash_messages{

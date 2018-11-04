@@ -8,8 +8,10 @@
         
   .row
     - @pictures.each do |picture|
-      .user-picture{ class: "col-lg-2 col-md-3 col-sm-4 col-xs-6" }
-        %b= picture.title.presence || 'no title'
-        %p= image_tag(picture.image.url(:thumb), class: 'img-rounded')
-        %p= picture.created_at.strftime('on %d/%m/%Y')
-
+      %div{ class: "col-lg-2 col-md-3 col-sm-4 col-xs-6" }
+        .user-picture
+          .title= picture.title.presence || 'no title'
+          .image
+            = link_to picture.image.url, { 'data-lightbox': 'gallery', 'data-title': "#{picture.title}" } do
+              = image_tag(picture.image.url(:thumb), class: 'img-rounded')
+          .created-at= picture.created_at.strftime('on %d/%m/%Y')
